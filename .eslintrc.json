@@ -1,0 +1,10 @@
+{
+  "extends": "next",
+  "rules": {
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off",
+    "semi": "off", // Disable semicolon rule
+    "@typescript-eslint/explicit-module-boundary-types": "off", // Disable explicit return types
+    "no-console": "off" // Disable console.log rule
+  }
+}
