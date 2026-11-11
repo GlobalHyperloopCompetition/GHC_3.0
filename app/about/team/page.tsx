@@ -106,7 +106,7 @@ import {
   
   export default function Team() {
     return (
-      <Box maxWidth={"full"} bg={useColorModeValue("white", "gray.800")}>
+      <Box maxWidth={"full"} bg="#0b0f17">
         <Navbar />
   
         <TeamHero />

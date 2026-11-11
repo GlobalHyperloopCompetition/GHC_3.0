@@ -100,7 +100,7 @@ export default function SplitWithImage() {
             </Heading>
 
             <Text color="gray.400" fontSize="lg">
-              The Global Hyperloop Competition 2.0, hosted by the Indian Institute of Technology Madras, marks the next leap in bringing the Hyperloop revolution to India. Building on the success of our 2025 edition, GHC 2.0 returns this January 2026 with a renewed vision — to push boundaries of innovation, collaboration, and technology on a truly global scale
+              The Global Hyperloop Competition 2.0, hosted by the Indian Institute of Technology Madras, marks the next leap in bringing the Hyperloop revolution to India. Building on the success of our 2025 edition, GHC 2.0 returns on January 4th, 5th & 6th with a renewed vision — to push boundaries of innovation, collaboration, and technology on a truly global scale
             </Text>
 
             <Text color="gray.400" fontSize="lg">
@@ -116,7 +116,7 @@ export default function SplitWithImage() {
               speed={0.8}
               chaos={0.1}
               thickness={2}
-              style={{ borderRadius: 16 }}
+              borderRadius={16}
             >
               <Card
                 heading="Innovation"
@@ -130,7 +130,7 @@ export default function SplitWithImage() {
               speed={1}
               chaos={0.1}
               thickness={2}
-              style={{ borderRadius: 16 }}
+              borderRadius={16}
             >
               <Card
                 heading="Inclusion"
@@ -144,7 +144,7 @@ export default function SplitWithImage() {
               speed={1.2}
               chaos={0.1}
               thickness={2}
-              style={{ borderRadius: 16 }}
+              borderRadius={16}
             >
               <Card
                 heading="Implementation"

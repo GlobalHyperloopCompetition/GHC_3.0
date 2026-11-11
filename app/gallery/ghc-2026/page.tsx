@@ -22,7 +22,7 @@ export default function ParallaxScrollDemo() {
         >
           <VStack spacing={4}>
             <Heading as="h1" size="2xl" color="gray.100">
-              GHC 2026 Gallery
+              GHC 2.0 Gallery
             </Heading>
             <Text fontSize="lg" color="gray.400" maxW="3xl">
               Take a look at some of the highlights from the event!

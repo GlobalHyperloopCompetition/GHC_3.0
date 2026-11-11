@@ -208,7 +208,7 @@ export default function HomeHero() {
 
                   <h2 className="font-semibold text-sm sm:text-base lg:text-lg">
                     <TextType
-                      text={['January 2027, 1st Week']}
+                      text={['January 4th, 5th & 6th']}
                       typingSpeed={65}
                       pauseDuration={1200}
                       showCursor

@@ -1,9 +1,11 @@
 "use client";
 import { useState, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
@@ -69,6 +71,11 @@ const Navbar = () => {
 
   ];
 
+  const isRouteActive = (route: (typeof routes)[number]) =>
+    (route.path?.startsWith("/") && pathname.startsWith(route.path)) ||
+    route.subRoutes?.some((subRoute) => pathname.startsWith(subRoute.path)) ||
+    false;
+
   const handleMouseEnter = (name: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setHoveredMenu(name);
@@ -101,15 +108,21 @@ const Navbar = () => {
 
       <ul className="hidden lg:flex flex-wrap justify-center items-center gap-x-8 gap-y-2 text-white font-medium text-[1.05rem] w-full lg:w-auto">
         {routes.map((route) => (
-          <li
-            key={route.name}
-            className="relative group"
-            onMouseEnter={() => handleMouseEnter(route.name)}
-            onMouseLeave={handleMouseLeave}
-          >
+            <li
+              key={route.name}
+              className="relative group"
+              onMouseEnter={() => handleMouseEnter(route.name)}
+              onMouseLeave={handleMouseLeave}
+            >
             {route.subRoutes ? (
               <>
-                <span className="cursor-pointer hover:text-cyan-400 transition-colors">
+                <span
+                  className={`relative cursor-pointer transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-purple-300 after:transition-all after:duration-300 ${
+                    isRouteActive(route)
+                      ? "text-purple-300 after:w-full"
+                      : "hover:text-purple-300 after:w-0 hover:after:w-full"
+                  }`}
+                >
                   {route.name}
                 </span>
                 <ul
@@ -137,12 +150,17 @@ const Navbar = () => {
             ) : (
               <Link
                 href={route.path || "#"}
-                className="hover:text-cyan-400 transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-cyan-400 hover:after:w-full after:transition-all after:duration-300"
+                aria-current={isRouteActive(route) ? "page" : undefined}
+                className={`relative transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-purple-300 after:transition-all after:duration-300 ${
+                  isRouteActive(route)
+                    ? "text-purple-300 after:w-full"
+                    : "hover:text-purple-300 after:w-0 hover:after:w-full"
+                }`}
               >
                 {route.name}
               </Link>
             )}
-          </li>
+            </li>
         ))}
       </ul>
 
@@ -209,7 +227,9 @@ const Navbar = () => {
                       onClick={() =>
                         setOpenSubMenu(openSubMenu === route.name ? null : route.name)
                       }
-                      className="text-3xl font-semibold mb-3 text-white w-full text-left hover:text-cyan-400 transition-colors"
+                      className={`relative text-3xl font-semibold mb-3 text-white w-full text-left transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-purple-300 after:transition-all after:duration-300 ${
+                        isRouteActive(route) ? "after:w-full" : "after:w-0"
+                      }`}
                     >
                       {route.name}
                     </button>
@@ -227,7 +247,11 @@ const Navbar = () => {
                               key={sub.title}
                               href={sub.path}
                               onClick={() => setMenuOpen(false)}
-                              className="text-gray-400 text-lg hover:text-cyan-400 transition-colors"
+                              className={`relative w-fit text-lg transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-purple-300 after:transition-all after:duration-300 ${
+                                pathname.startsWith(sub.path)
+                                  ? "text-purple-300 after:w-full"
+                                  : "text-gray-400 hover:text-purple-300 after:w-0 hover:after:w-full"
+                              }`}
                             >
                               <div>{sub.title}</div>
                               <div className="text-sm">{sub.desc}</div>
@@ -241,7 +265,12 @@ const Navbar = () => {
                   <Link
                     href={route.path || "#"}
                     onClick={() => setMenuOpen(false)}
-                    className="text-3xl font-semibold text-white hover:text-cyan-400 transition-colors"
+                    aria-current={isRouteActive(route) ? "page" : undefined}
+                    className={`relative w-fit text-3xl font-semibold text-white transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-purple-300 after:transition-all after:duration-300 ${
+                      isRouteActive(route)
+                        ? "text-purple-300 after:w-full"
+                        : "hover:text-purple-300 after:w-0 hover:after:w-full"
+                    }`}
                   >
                     {route.name}
                   </Link>

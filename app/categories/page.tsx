@@ -79,7 +79,7 @@ const Card = ({ heading, description, icon, href }: CardProps) => {
 const Page = () => {
   return (
     <>
-      <Box bg={useColorModeValue("white", "gray.800")} maxW="full">
+      <Box bg="#0b0f17" maxW="full">
         <Navbar />
 
         <Stack
@@ -214,7 +214,7 @@ const Page = () => {
 
             {/* Register Button */}
             <motion.div whileTap={{ scale: 0.95 }} whileHover={{ scale: 1.05 }}>
-              <Link href={"https://forms.gle/ENnNUHNLrJNDdLuB7"}> {/* Register Link  */}
+              <Link href={"https://forms.gle/jgFNPaJzrB8H8jyM6"}> {/* Register Link  */}
                 <Button
                   rounded={"full"}
                   size={"lg"}

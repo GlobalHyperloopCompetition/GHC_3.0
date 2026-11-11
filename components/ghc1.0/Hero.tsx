@@ -7,13 +7,13 @@ import {
   Flex,
   Text,
   Heading,
-  useColorModeValue,
 } from "@chakra-ui/react";
 
 export default function TrackDetails() {
   return (
     <Box
-      bg={useColorModeValue("gray.200", "gray.800")}
+      bg="rgba(255,255,255,0.06)"
+      color="white"
       position={"relative"}
       p={{ base: 2, md: 4 }}
     >
@@ -31,10 +31,7 @@ export default function TrackDetails() {
         right={0}
       >
         <Flex
-          bgGradient={useColorModeValue(
-            "linear(to-r, gray.200 0%, transparent)",
-            "linear(to-r, gray.800 10%, transparent)"
-          )}
+          bgGradient="linear(to-r, #0b0f17 0%, transparent)"
           w={"full"}
           h={"full"}
         />
@@ -43,7 +40,7 @@ export default function TrackDetails() {
         <Stack direction={{ base: "column", lg: "row" }}>
           <Stack
             flex={1}
-            color={"gray.400"}
+            color={"gray.300"}
             justify={{ lg: "center" }}
             py={{ base: 4, md: 16, xl: 30 }}
           >
@@ -54,12 +51,12 @@ export default function TrackDetails() {
                 textTransform={"uppercase"}
                 mb={3}
                 fontSize={"xl"}
-                color={"gray.500"}
+                color={"purple.300"}
               >
                 April 2024
               </Text>
               <Heading
-                color={useColorModeValue("gray.900", "white")}
+                color="white"
                 mb={5}
                 fontSize={{ base: "3xl", md: "5xl" }}
               >
@@ -67,7 +64,7 @@ export default function TrackDetails() {
               </Heading>
               <Text
                 fontSize={"xl"}
-                color={useColorModeValue("gray.600", "gray.400")}
+                color="gray.300"
               >
                 Parivahan - The Global Hyperloop Conference (GHC) marked
                 India's first-ever international conference on innovative
@@ -82,7 +79,7 @@ export default function TrackDetails() {
               </Text>
               <Text
                 fontSize={"xl"}
-                color={useColorModeValue("gray.600", "gray.400")}
+                color="gray.300"
                 mt={4}
               >
                 The conference hosted experts who have significantly

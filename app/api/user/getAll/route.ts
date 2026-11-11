@@ -1,10 +1,9 @@
 import { db } from "@/firebase/config";
 import { collection, getDocs } from "firebase/firestore";
-import { NextApiRequest, NextApiResponse } from "next";
 import { NextResponse } from "next/server";
 // import * as XLSX from "xlsx";
 
-export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
+export const GET = async () => {
   const dataCollection = collection(db, "users");
   const snapshot = await getDocs(dataCollection);
   // Convert Firestore snapshot to array of objects

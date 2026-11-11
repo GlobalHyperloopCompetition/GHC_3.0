@@ -393,8 +393,7 @@ export default function JoinOurTeam() {
   return (
     <Box
       position={"relative"}
-      h={"100vh"}
-      overflowY={useBreakpointValue({ md: "hidden" })}
+      minH={"100svh"}
     >
       <Container
         as={SimpleGrid}
@@ -476,7 +475,7 @@ export default function JoinOurTeam() {
           </Stack>
         </Stack>
         <Stack
-          bg={"gray.50"}
+          bg={"whiteAlpha.100"}
           rounded={"xl"}
           p={{ base: 4, sm: 6, md: 8 }}
           spacing={{ base: 0 }}
@@ -484,7 +483,7 @@ export default function JoinOurTeam() {
         >
           <Stack spacing={2}>
             <Heading
-              color={"gray.800"}
+              color={"gray.100"}
               lineHeight={1.1}
               fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
             >

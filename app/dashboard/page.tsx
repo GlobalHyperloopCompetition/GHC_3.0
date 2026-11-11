@@ -12,13 +12,12 @@ import {
 
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import useGetTeam from "../../utils/useGetTeam";
+import Loading from "@/components/Loading";
 // import { useNavigate, Link } from 'react-router-dom'
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { usePresence, motion } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { signOut, useSession } from "next-auth/react";
-import gsap from "gsap";
 
 
 import { collection, onSnapshot } from "firebase/firestore";
@@ -34,61 +33,6 @@ import { db } from "../../firebase/config";
     }
 
 
-
-export const Loading: React.FC<any> = (props: any) => {
-  const ref = useRef(null);
-  const [isPresent, safeToRemove] = usePresence();
-  const [team, isLoading] = useGetTeam();
-
-  const show = {
-    opacity: 1,
-    display: "block",
-  };
-
-  const hide = {
-    opacity: 0,
-    transitionEnd: {
-      display: "none",
-    },
-  };
-
-  useEffect(() => {
-    if (!isPresent) {
-      gsap.to(ref.current, {
-        opacity: 0,
-        onComplete: () => safeToRemove?.(),
-      });
-    }
-  }, [isPresent, safeToRemove]);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={isLoading ? show : hide}
-      ref={ref}
-      transition={{ ease: "easeOut", duration: 3 }}
-    >
-      <Box
-        display={"flex"}
-        alignItems={"center"}
-        justifyContent={"center"}
-        transition={"all ease 12s"}
-        height={"100vh"}
-        width={"100vw"}
-      >
-        <motion.div
-          initial={{ y: 0 }}
-          animate={{ y: 10 }}
-          transition={{ ease: "easeIn" }}
-        >
-          <Text fontWeight={"extrabold"} fontSize={"6xl"}>
-            GHC
-          </Text>
-        </motion.div>
-      </Box>
-    </motion.div>
-  );
-};
 
 const Detail = ({ label, value }: { label: string; value: string }) => {
   return (

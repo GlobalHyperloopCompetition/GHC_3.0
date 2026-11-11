@@ -34,7 +34,8 @@ const LinkedInCard = ({
       target="_blank"
       href={postUrl}
       borderWidth={"1px"}
-      bg={"gray.50"}
+      bg={"whiteAlpha.100"}
+      color="gray.100"
       py={6}
       rounded={"md"}
       maxWidth={"320px"}
@@ -47,7 +48,7 @@ const LinkedInCard = ({
           h={10}
         />
         <VStack textAlign={"left"} align={"left"} spacing={0}>
-          <Text color={"gray.900"} fontWeight={600}>
+          <Text color={"gray.100"} fontWeight={600}>
             Global Hyperloop Competition
           </Text>
           <Text color={"gray.500"} fontSize={"xs"}>
@@ -57,7 +58,7 @@ const LinkedInCard = ({
       </HStack>
 
       <Box px={4}>
-        <Text color={"gray.700"} fontSize={"sm"}>
+        <Text color={"gray.200"} fontSize={"sm"}>
           {title}
         </Text>
       </Box>
@@ -68,11 +69,11 @@ const LinkedInCard = ({
         mt={4}
         pt={4}
         borderTopWidth={"1px"}
-        borderColor={"gray.300"}
+        borderColor={"whiteAlpha.300"}
         w={"90%"}
         h={"fit-content"}
         spacing={4}
-        color={"gray.600"}
+        color={"gray.300"}
         justifyContent={"space-evenly"}
       >
         <Icon boxSize={6} as={AiOutlineLike} />
@@ -85,7 +86,7 @@ const LinkedInCard = ({
 
 const Activity: React.FC<any> = () => {
   return (
-    <Box w={"full"} px={0} overflowX={"hidden"}>
+    <Box w={"full"} px={0} overflowX={"hidden"} bg="#0b0f17">
       <Navbar />
       <Container maxW={"3xl"} textAlign={"center"} p={8}>
         <Heading fontSize={{ base: "2xl", sm: "4xl" }} fontWeight={"bold"}>

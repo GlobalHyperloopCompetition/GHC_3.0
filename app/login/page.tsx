@@ -23,7 +23,7 @@ import { signIn } from "next-auth/react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import useGetTeam from "@/utils/useGetTeam";
-import { Loading } from "../dashboard/page";
+import Loading from "@/components/Loading";
 
 export default function SimpleCard() {
   const mutation = useMutation(login);

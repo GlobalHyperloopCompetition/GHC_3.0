@@ -21,14 +21,14 @@ const SignUpField: React.FC<PropTypes> = ({
 }) => {
   return (
     <FormControl isRequired id={id}>
-      <FormLabel color={"gray.600"}>{label}</FormLabel>
+      <FormLabel color={"gray.300"}>{label}</FormLabel>
       <Input
         name={id}
         placeholder={placeholder}
         type={type}
-        bg={"gray.100"}
+        bg={"whiteAlpha.100"}
         border={0}
-        color={"gray.800"}
+        color={"white"}
         focusBorderColor="red.400"
         _placeholder={{
           color: "gray.300",

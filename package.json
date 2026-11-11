@@ -30,6 +30,8 @@
     "motion": "^12.23.26",
     "next": "14.2.3",
     "next-auth": "^4.24.7",
+    "nodemailer": "^7.0.13",
+    "postprocessing": "^6.35.4",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",

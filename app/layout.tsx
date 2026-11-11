@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Providers from "./Provider";
 import SessionWraper from "../components/SessionWraper";
+import SiteMain from "../components/SiteMain";
 import "./globals.css";
 
 import { Inter } from "next/font/google";
@@ -13,6 +14,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.jpg",
   },
+};
+
+export const viewport: Viewport = {
   themeColor: "#0b0f17",
 };
 
@@ -22,15 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-[#0b0f17]">
+    <html lang="en" className="dark bg-[#0b0f17]">
       <body className={inter.className}>
         <SessionWraper>
           <Providers>
 
-            {/* Navbar overlays hero now */}
-            <main>
+            <SiteMain>
               {children}
-            </main>
+            </SiteMain>
 
           </Providers>
         </SessionWraper>

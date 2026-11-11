@@ -25,14 +25,21 @@ const SocialButton = ({
   children,
   label,
   href,
+  dark = false,
 }: {
   children: ReactNode;
   label: string;
   href: string;
+  dark?: boolean;
 }) => {
+  const defaultBackground = useColorModeValue(
+    "blackAlpha.100",
+    "whiteAlpha.100"
+  );
+
   return (
     <chakra.button
-      bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
+      bg={dark ? "whiteAlpha.100" : defaultBackground}
       rounded={"full"}
       w={12}
       h={10}
@@ -45,7 +52,7 @@ const SocialButton = ({
       justifyContent={"center"}
       transition={"background 0.3s ease"}
       _hover={{
-        bg: useColorModeValue("red.500", "red.500"),
+        bg: dark ? "purple.500" : "red.500",
       }}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
@@ -65,15 +72,20 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 const FooterLink = ({
   children,
   href,
+  dark = false,
 }: {
   children: ReactNode;
   href: string;
+  dark?: boolean;
 }) => {
   return (
     <Link href={href}>
       <Box
-        color={"gray.500"}
-        _hover={{ color: "red.400", textDecoration: "underline" }}
+        color={dark ? "gray.300" : "gray.500"}
+        _hover={{
+          color: dark ? "purple.300" : "red.400",
+          textDecoration: "underline",
+        }}
       >
         {children}
       </Box>
@@ -81,13 +93,26 @@ const FooterLink = ({
   );
 };
 
-export default function LargeWithNewsletter() {
+export default function LargeWithNewsletter({ dark = false }: { dark?: boolean }) {
   const [email, setEmail] = useState("");
+  const defaultBackground = useColorModeValue("gray.100", "gray.900");
+  const defaultColor = useColorModeValue("gray.700", "gray.200");
+  const defaultLogo = useColorModeValue(
+    "/GHC-LOGO-BLACK.png",
+    "/GHC-logo.png"
+  );
+  const defaultInputBackground = useColorModeValue(
+    "blackAlpha.100",
+    "whiteAlpha.100"
+  );
+  const defaultButtonBackground = useColorModeValue("red.400", "red.600");
+  const defaultButtonColor = useColorModeValue("white", "gray.200");
+  const defaultButtonHoverBackground = useColorModeValue("red.600", "red.400");
 
   return (
     <Box
-      bg={useColorModeValue("gray.100", "gray.900")}
-      color={useColorModeValue("gray.700", "gray.200")}
+      bg={dark ? "#0b0f17" : defaultBackground}
+      color={dark ? "gray.200" : defaultColor}
     >
       <Container as={Stack} maxW={"6xl"} py={10}>
         <SimpleGrid
@@ -99,19 +124,17 @@ export default function LargeWithNewsletter() {
               <Link href="/">
                 <Image
                   alt="GHC_logo"
-                  src={useColorModeValue(
-                    "/GHC-LOGO-BLACK.png",
-                    "/GHC-logo.png"
-                  )}
+                  src={dark ? "/GHC-logo.png" : defaultLogo}
                   h={6}
                 />
               </Link>
             </HStack>
-            <Text fontSize={"sm"}>© 2026 GHC . All rights reserved</Text>
+            <Text fontSize={"sm"}>© 2027 GHC . All rights reserved</Text>
             <Stack direction={"row"} spacing={6}>
               <SocialButton
                 label={"Instagram"}
                 href="https://www.instagram.com/ghc_india/"
+                dark={dark}
               >
                 <FaInstagram />
               </SocialButton>
@@ -120,12 +143,14 @@ export default function LargeWithNewsletter() {
                 href={
                   "https://www.linkedin.com/company/global-hyperloop-competition-iitm/mycompany/"
                 }
+                dark={dark}
               >
                 <FaLinkedin />
               </SocialButton>
               <SocialButton
                 label={"Twitter"}
                 href={"https://twitter.com/GHCIITM"}
+                dark={dark}
               >
                 <FaTwitter />
               </SocialButton>
@@ -134,6 +159,7 @@ export default function LargeWithNewsletter() {
                 href={
                   "https://www.youtube.com/channel/UCevcN_ISH3AZ5eujROl7UAQ"
                 }
+                dark={dark}
               >
                 <FaYoutube />
               </SocialButton>
@@ -141,15 +167,15 @@ export default function LargeWithNewsletter() {
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Company</ListHeader>
-            <FooterLink href="/about/mission">Mission and Vision</FooterLink>
-            <FooterLink href="/about/team">Our Team</FooterLink>
-            <FooterLink href="/about/activity">Activity</FooterLink>
+            <FooterLink href="/about/mission" dark={dark}>Mission and Vision</FooterLink>
+            <FooterLink href="/about/team" dark={dark}>Our Team</FooterLink>
+            <FooterLink href="/about/activity" dark={dark}>Activity</FooterLink>
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Support</ListHeader>
-            <FooterLink href="#">Blog (Coming soon)</FooterLink>
-            <FooterLink href="/contact">Contact us</FooterLink>
-            <FooterLink href="mailto: ghc@smail.iitm.ac.in">Email</FooterLink>
+            <FooterLink href="#" dark={dark}>Blog (Coming soon)</FooterLink>
+            <FooterLink href="/contact" dark={dark}>Contact us</FooterLink>
+            <FooterLink href="mailto: ghc@smail.iitm.ac.in" dark={dark}>Email</FooterLink>
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Contact Us</ListHeader>
@@ -158,19 +184,19 @@ export default function LargeWithNewsletter() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={"Your email address"}
-                bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
+                bg={dark ? "whiteAlpha.100" : defaultInputBackground}
                 border={0}
                 _focus={{
                   bg: "whiteAlpha.300",
                 }}
-                focusBorderColor="red.400"
+                focusBorderColor={dark ? "purple.400" : "red.400"}
               />
               <Link href={`/contact?email=${email}`}>
                 <IconButton
-                  bg={useColorModeValue("red.400", "red.600")}
-                  color={useColorModeValue("white", "gray.200")}
+                  bg={dark ? "purple.600" : defaultButtonBackground}
+                  color={dark ? "white" : defaultButtonColor}
                   _hover={{
-                    bg: useColorModeValue("red.600", "red.400"),
+                    bg: dark ? "purple.500" : defaultButtonHoverBackground,
                   }}
                   aria-label="Contact"
                   icon={<BiMailSend />}

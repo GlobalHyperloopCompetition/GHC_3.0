@@ -140,7 +140,7 @@ const Card = ({ id, title, description, date }: CardProps) => {
       }}
     >
       <Box>
-        <Text fontSize="lg" color={isEvenId ? "teal.400" : "blue.400"}>
+        <Text fontSize="lg" color={isEvenId ? "purple.300" : "indigo.300"}>
           {date}
         </Text>
 

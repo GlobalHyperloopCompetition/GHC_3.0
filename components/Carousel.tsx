@@ -47,7 +47,7 @@ export default function Carousel() {
       {/* Left Icon */}
       <IconButton
         aria-label="left-arrow"
-        colorScheme="red"
+        colorScheme="purple"
         borderRadius="full"
         position="absolute"
         left={side}
@@ -61,7 +61,7 @@ export default function Carousel() {
       {/* Right Icon */}
       <IconButton
         aria-label="right-arrow"
-        colorScheme="red"
+        colorScheme="purple"
         borderRadius="full"
         position="absolute"
         right={side}

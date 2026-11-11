@@ -154,7 +154,7 @@ function ContactFormWithSocialButtons() {
 
   return (
     <Flex
-      bg={useColorModeValue("gray.50", "gray.800")}
+      bg="#0b0f17"
       align="center"
       justify="center"
       css={{
@@ -185,57 +185,89 @@ function ContactFormWithSocialButtons() {
             >
               Get in Touch
             </Heading>
-            <Stack direction={{ base: "column", md: "row" }} spacing={4}>
-              <Card maxW="sm" mx="auto">
-                <CardBody>
-                  <Image
-                    mx="auto"
-                    height="200px"
-                    width="200px"
-                    objectFit="cover"
-                    src="/hemant.jpg"
-                    alt="Hemant"
-                    borderRadius="lg"
-                  />
-
-                  <Stack mt="6" spacing="3" textAlign="center" align="center">
-                    <Heading size="lg" fontWeight="bold">
-                      Hemant Meena
-                    </Heading>
-                    <Text fontWeight="medium" color="gray.600">
-                      GHC Head, IIT Madras
-                    </Text>
-                    <Text color="blue.500" fontSize="xl">
-                      Contact - +91 89059 27132
-                    </Text>
-                  </Stack>
-                </CardBody>
-                <Divider />
-                <CardFooter>
-                  <ButtonGroup spacing="2">
-                    <Link
-                      href="https://www.linkedin.com/in/hemant-meena-3868702b4/"
-                      target="_blank"
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              spacing={6}
+              align="stretch"
+              justify="center"
+              w="full"
+            >
+              {[
+                {
+                  name: "Nizammudin",
+                  image: "/Nizam_GHC_Head.jpeg",
+                  role: "GHC Head, IIT Madras",
+                  phone: "+91 70349 43826",
+                  linkedin: "https://www.linkedin.com/in/nizamuddin-iitm/",
+                },
+                {
+                  name: "K. Sashank Kumar",
+                  image: "/Sashank_GHC_Head.jpeg",
+                  role: "GHC Head, IIT Madras",
+                  phone: "+91 96661 10425",
+                  linkedin: "https://www.linkedin.com/in/k-sashank-kumar/",
+                },
+              ].map((head) => (
+                <Card
+                  key={head.name}
+                  maxW="sm"
+                  w="full"
+                  mx="auto"
+                  bg="whiteAlpha.100"
+                  color="white"
+                  borderWidth="1px"
+                  borderColor="whiteAlpha.200"
+                >
+                  <CardBody>
+                    <Box
+                      mx="auto"
+                      w={{ base: "full", sm: "280px" }}
+                      aspectRatio="3 / 4"
+                      overflow="hidden"
+                      borderRadius="lg"
                     >
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                      <Image
+                        w="full"
+                        h="full"
+                        objectFit="cover"
+                        objectPosition="top"
+                        src={head.image}
+                        alt={head.name}
+                      />
+                    </Box>
+                    <Stack mt="6" spacing="3" textAlign="center" align="center">
+                      <Heading size="lg" fontWeight="bold">
+                        {head.name}
+                      </Heading>
+                      {head.role && (
+                        <Text fontWeight="medium" color="gray.300">
+                          {head.role}
+                        </Text>
+                      )}
+                      <Text color="gray.200" fontSize="xl">
+                        Contact - {head.phone}
+                      </Text>
+                    </Stack>
+                  </CardBody>
+                  <Divider borderColor="whiteAlpha.300" />
+                  <CardFooter justifyContent="center">
+                    <ButtonGroup spacing="2">
+                      <Link
+                        href={head.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <Button colorScheme="teal">LinkedIn</Button>
-                      </motion.div>
-                    </Link>
-                  </ButtonGroup>
-                </CardFooter>
-              </Card>
-
-             
-
-               
-                 
-
-         
-
-          
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Button colorScheme="purple">LinkedIn</Button>
+                        </motion.div>
+                      </Link>
+                    </ButtonGroup>
+                  </CardFooter>
+                </Card>
+              ))}
             </Stack>
             <Stack
               spacing={{ base: 4, md: 8, lg: 20 }}

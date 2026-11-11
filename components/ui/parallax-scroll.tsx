@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Box,
   Image,
@@ -21,16 +21,6 @@ export const ParallaxScroll = ({
   images: string[];
   className?: string;
 }) => {
-  const gridRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    container: gridRef,
-    offset: ["start start", "end start"],
-  });
-
-  const translateY1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const translateY2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const translateY3 = useTransform(scrollYProgress, [0, 1], [0, -50]);
-
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -46,7 +36,6 @@ export const ParallaxScroll = ({
 
   return (
     <Box
-      ref={gridRef}
       px={{ base: 4, md: 12 }}
       py={20}
       overflow="visible"
@@ -55,27 +44,20 @@ export const ParallaxScroll = ({
     >
       <SimpleGrid
         columns={{ base: 1, md: 2, lg: 3 }}
-        spacing={10}
+        spacing={{ base: 6, md: 8, lg: 10 }}
         maxW="6xl"
         mx="auto"
+        alignItems="start"
       >
         {[firstPart, secondPart, thirdPart].map((part, index) => (
-          <Box key={index} display="grid" gap={8}>
+          <Box key={index} display="grid" gap={{ base: 6, md: 8, lg: 10 }}>
             {part.map((src, idx) => (
               <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
+                key={`${src}-${idx}`}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.05 }}
+                transition={{ duration: 0.45, delay: idx * 0.04 }}
                 viewport={{ once: true }}
-                style={{
-                  y:
-                    index === 0
-                      ? translateY1
-                      : index === 1
-                      ? translateY2
-                      : translateY3,
-                }}
               >
                 <Box
                   position="relative"
@@ -84,15 +66,17 @@ export const ParallaxScroll = ({
                   overflow="hidden"
                   borderRadius="lg"
                   boxShadow="lg"
+                  h={{ base: "220px", md: "260px", lg: "320px" }}
                   transition="all 0.3s ease"
-                  _hover={{ transform: "scale(1.03)" }}
+                  _hover={{ transform: "scale(1.015)" }}
+                  border="1px solid rgba(255, 255, 255, 0.08)"
                 >
                   <Image
                     src={src}
                     alt={`GHC image ${idx + 1}`}
                     objectFit="cover"
                     w="100%"
-                    h="320px"
+                    h="100%"
                     transition="all 0.3s ease"
                   />
                   <Box
@@ -122,7 +106,6 @@ export const ParallaxScroll = ({
         ))}
       </SimpleGrid>
 
-      {/* Lightbox Modal */}
       <Modal isOpen={isOpen} onClose={onClose} size="6xl" isCentered>
         <ModalOverlay backdropFilter="blur(10px) brightness(0.5)" />
         <ModalContent bg="transparent" boxShadow="none">
@@ -150,7 +133,6 @@ export const ParallaxScroll = ({
         </ModalContent>
       </Modal>
 
-      {/* Back to Top Button */}
       <Box position="fixed" bottom="5" right="5" zIndex="99">
         <motion.button
           whileHover={{ scale: 1.1 }}

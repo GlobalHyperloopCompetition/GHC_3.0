@@ -10,7 +10,6 @@ import {
   Button,
   Icon,
   IconProps,
-  useColorModeValue,
   AspectRatio,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
@@ -47,18 +46,18 @@ export default function LectureHero() {
                 position: "absolute",
                 bottom: 1,
                 left: 0,
-                bg: "red.400",
+                bg: "purple.400",
                 zIndex: -1,
               }}
             >
               Explore Now,
             </Text>
             <br />
-            <Text as={"span"} color={"red.400"}>
+            <Text as={"span"} color={"purple.300"}>
               The Hyperloop Way
             </Text>
           </Heading>
-          <Text color={"gray.500"}>
+          <Text color={"gray.300"}>
             The GHC online lecture series aims to educate the world about the
             Hyperloop, the technology involved, its feasibility, and its future.
             <br />
@@ -76,9 +75,9 @@ export default function LectureHero() {
                   size={"lg"}
                   fontWeight={"bold"}
                   px={6}
-                  colorScheme={"red"}
-                  bg={"red.400"}
-                  _hover={{ bg: "red.500" }}
+                  colorScheme={"purple"}
+                  bg={"purple.600"}
+                  _hover={{ bg: "purple.500" }}
                   onClick={() => {
                     var elmntToView = document.getElementById("advisors");
                     elmntToView?.scrollIntoView();
@@ -120,7 +119,7 @@ export default function LectureHero() {
             top={"-25%"}
             left={0}
             zIndex={0}
-            color={useColorModeValue("red.300", "red.400")}
+            color="purple.400"
           />
           <Box
             position={"relative"}

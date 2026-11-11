@@ -63,7 +63,7 @@ export default function Videos() {
               flexDir={{ base: "column", md: "row" }}
             >
               <Text
-                color="gray.500"
+                color="gray.300"
                 w={"85%"}
                 mr={8}
                 mb={{ base: 8, md: 0 }}
@@ -81,7 +81,7 @@ export default function Videos() {
                 <br />
                 Visit loopMIT at:{" "}
                 <Link href="https://www.loopmit.in/" target="_blank">
-                  <Text color={"red.400"} _hover={{ textDecor: "underline" }}>
+                  <Text color={"purple.300"} _hover={{ textDecor: "underline" }}>
                     https://www.loopmit.in/
                   </Text>
                 </Link>
@@ -132,7 +132,7 @@ export default function Videos() {
               flexDir={{ base: "column", md: "row" }}
             >
               <Text
-                color="gray.500"
+                color="gray.300"
                 w={"85%"}
                 mr={8}
                 mb={{ base: 8, md: 0 }}
@@ -159,7 +159,7 @@ export default function Videos() {
                   href="https://www.linkedin.com/company/teamvegapodhyperloop/"
                   target="_blank"
                 >
-                  <Text color={"red.400"} _hover={{ textDecor: "underline" }}>
+                  <Text color={"purple.300"} _hover={{ textDecor: "underline" }}>
                     https://www.linkedin.com/company/teamvegapodhyperloop/
                   </Text>
                 </Link>
@@ -210,7 +210,7 @@ export default function Videos() {
               flexDir={{ base: "column", md: "row" }}
             >
               <Text
-                color="gray.500"
+                color="gray.300"
                 w={"85%"}
                 mr={8}
                 mb={{ base: 8, md: 0 }}
@@ -233,7 +233,7 @@ export default function Videos() {
                 <br />
                 Visit Nirmaan Hyperloop at:{" "}
                 <Link href="https://www.nirmaanhyperloop.com/" target="_blank">
-                  <Text color={"red.400"} _hover={{ textDecor: "underline" }}>
+                  <Text color={"purple.300"} _hover={{ textDecor: "underline" }}>
                     https://www.nirmaanhyperloop.com/
                   </Text>
                 </Link>
@@ -281,7 +281,7 @@ export default function Videos() {
               flexDir={{ base: "column", md: "row" }}
             >
               <Text
-                color="gray.500"
+                color="gray.300"
                 w={"85%"}
                 mr={8}
                 mb={{ base: 8, md: 0 }}
@@ -306,7 +306,7 @@ export default function Videos() {
                   href="https://infinityhyperloop.iitd.ac.in/"
                   target="_blank"
                 >
-                  <Text color={"red.400"} _hover={{ textDecor: "underline" }}>
+                  <Text color={"purple.300"} _hover={{ textDecor: "underline" }}>
                     https://infinityhyperloop.iitd.ac.in/
                   </Text>
                 </Link>
@@ -354,7 +354,7 @@ export default function Videos() {
               flexDir={{ base: "column", md: "row" }}
             >
               <Text
-                color="gray.500"
+                color="gray.300"
                 w={"85%"}
                 mr={8}
                 mb={{ base: 8, md: 0 }}
@@ -380,7 +380,7 @@ export default function Videos() {
                 <br />
                 Visit Avishkar Hyperloop at:{" "}
                 <Link href="https://avishkarhyperloop.com/" target="_blank">
-                  <Text color={"red.400"} _hover={{ textDecor: "underline" }}>
+                  <Text color={"purple.300"} _hover={{ textDecor: "underline" }}>
                     https://avishkarhyperloop.com/
                   </Text>
                 </Link>
