@@ -199,7 +199,7 @@ export default function HomeHero() {
                       shadow-[0_0_30px_rgba(180,120,255,0.5)]
                     "
                   >
-                    GHC 3.0 Coming Soon
+                    GHC 3.0
                   </span>
                 </div>
 
@@ -208,7 +208,7 @@ export default function HomeHero() {
 
                   <h2 className="font-semibold text-sm sm:text-base lg:text-lg">
                     <TextType
-                      text={['January 4th, 5th & 6th']}
+                      text={['January 4th, 5th & 6th, 2027']}
                       typingSpeed={65}
                       pauseDuration={1200}
                       showCursor
@@ -218,7 +218,7 @@ export default function HomeHero() {
 
                   <h2 className="font-semibold text-sm sm:text-base lg:text-lg">
                     <TextType
-                      text={['IIT Madras, Chennai']}
+                      text={['IIT Madras, Chennai.']}
                       typingSpeed={65}
                       pauseDuration={1200}
                       showCursor
