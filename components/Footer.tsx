@@ -157,7 +157,7 @@ export default function LargeWithNewsletter({ dark = false }: { dark?: boolean }
               <SocialButton
                 label={"YouTube"}
                 href={
-                  "https://www.youtube.com/channel/UCevcN_ISH3AZ5eujROl7UAQ"
+                  "https://www.youtube.com/@GHCIITM"
                 }
                 dark={dark}
               >
