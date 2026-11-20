@@ -31,17 +31,17 @@ const startDocs = [
   {
     title: "Participation Guide",
     what: "Steps for each track, forms and FAQ.",
-    file: null,
+    file: "https://drive.google.com/file/d/1I-VRy2TOh8JHgH9rI_b-I78pNAX-1S4r/view?usp=sharing",
   },
   {
     title: "Competition Framework",
     what: "Rules, schedule, event days, scoring overview, code of conduct.",
-    file: null,
+    file: "https://drive.google.com/file/d/1ZURSjs3iq869QEnNlVib1AkAaY2OjpFe/view?usp=sharing",
   },
   {
     title: "Terms & Conditions",
     what: "Fee, insurance, liability, conduct. Signed copy due 28 Dec.",
-    file: null,
+    file: "https://drive.google.com/file/d/1Byc25sAgyZxvUBG7aS5DqWrTttrk-l3N/view?usp=sharing",
   },
 ];
 
@@ -57,7 +57,7 @@ const trackData = [
         due: "Tue 8 Dec",
         what: "Your proposal: what you will bring and demonstrate.",
         pages: "6 pages per subsystem group, 24 in total",
-        guide: null,
+        guide: "https://drive.google.com/file/d/10L3fs21eNY0b342vM7fDhPuOmjWr3yNF/view?usp=sharing",
         submit: null,
       },
       {
@@ -66,7 +66,7 @@ const trackData = [
         due: "Mon 21 Dec",
         what: "Tests done, DPS compliance, procedures, datasheets.",
         pages: "40 pages in total",
-        guide: null,
+        guide: "https://drive.google.com/file/d/1lISuZEYfpINBGWGQzG0F87q7w0gSC3Gj/view?usp=sharing",
         submit: null,
       },
       {
@@ -75,7 +75,7 @@ const trackData = [
         due: "Thu 24 Dec",
         what: "Full design, analysis, safety case, track and logistics.",
         pages: "80 pages in total, appendix up to 20 more",
-        guide: null,
+        guide: "https://drive.google.com/file/d/1gJ_QpFm0rmr9AwZyPkGPLbaK1F0hEBFq/view?usp=sharing",
         submit: null,
       },
     ],
@@ -83,12 +83,12 @@ const trackData = [
       {
         title: "DPS",
         what: "Demonstration Procedures & Safety: the safety requirements your pod must meet.",
-        file: null,
+        file: "https://drive.google.com/file/d/1Q0umd27C4AGldPCS-B4wEQlQLEhPXY42/view?usp=sharing",
       },
       {
         title: "Scrutineering Procedures",
         what: "Inspection stages and checks, 4 to 6 Jan. Bring 3 printed copies of CDR and SBT.",
-        file: null,
+        file: "https://drive.google.com/file/d/1bwcoNlYCIz-qIY5rs-vA9M1DB9coNfjg/view?usp=sharing",
       },
     ],
     note:
@@ -105,7 +105,7 @@ const trackData = [
         due: "Tue 8 Dec",
         what: "Your first design: concept, subsystems, safety, plan.",
         pages: "2 pages for the introduction and 6 pages per subsystem group, 26 in total",
-        guide: null,
+        guide: "https://drive.google.com/file/d/1p0ilQlWY9gkWpe9NqwTgYLP-sm54CJge/view?usp=sharing",
         submit: null,
       },
       {
@@ -114,7 +114,7 @@ const trackData = [
         due: "Thu 24 Dec",
         what: "The complete design with analysis, budget and risks.",
         pages: "90 pages in total",
-        guide: null,
+        guide: "https://drive.google.com/file/d/1rSPfoKr8hdpK_8Jp17dujBSiRyZHHcZ9/view?usp=sharing",
         submit: null,
       },
     ],
@@ -132,7 +132,7 @@ const trackData = [
         due: "Tue 8 Dec",
         what: "Problem, category, method and expected outcome. One per topic.",
         pages: "10 pages",
-        guide: null,
+        guide: "https://drive.google.com/file/d/1cG9N_3mJVMnt235acFkQM2RaexJXebDO/view?usp=sharing",
         submit: null,
       },
       {
@@ -141,7 +141,7 @@ const trackData = [
         due: "Thu 24 Dec",
         what: "Findings and conclusions. One per topic.",
         pages: "40 pages",
-        guide: null,
+        guide: "https://drive.google.com/file/d/1M3sBRFSJBaIo9uQfK9zJVaVXwIoQZw98/view?usp=sharing",
         submit: null,
       },
     ],
@@ -149,7 +149,7 @@ const trackData = [
       {
         title: "Innoquest Research Topics",
         what: "Priority topics to choose from. You may propose your own.",
-        file: null,
+        file: "https://drive.google.com/file/d/1zoep1XV7zl3tlb-NyY0MKNkkrVYIej3b/view?usp=sharing",
       },
     ],
     note: "",
@@ -160,7 +160,7 @@ const allTeams = [
   {
     title: "Evaluation and Awarding Criteria",
     what: "How each track is scored out of 100, awards and ties.",
-    file: null,
+    file: "https://drive.google.com/file/d/1OsTyg7cZzr3cBtBSLk2kywgvPf_10TQV/view?usp=sharing",
   },
   {
     title: "Letter of Promise, T&C and insurance proof",
